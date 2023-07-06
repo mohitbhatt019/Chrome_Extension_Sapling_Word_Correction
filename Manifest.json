@@ -1,0 +1,20 @@
+{
+  "name": "Grammar",
+  "version": "0.1",
+  "description": "This extension is for grammar",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "tabs", "notifications", "cookies", "activeTab"],
+  "host_permissions": ["\u003Call_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["\u003Call_urls>", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
